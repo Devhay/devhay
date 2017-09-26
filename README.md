@@ -40,7 +40,7 @@ require vendor/autoload.php
 
 ## 开发版
 
-要使用开发版本，只需要添加版本号 **@dev** 即可
+要使用开发版本，只需要添加版本号 `@dev` 即可
 
 ```powershell
 composer require devhay/lib @dev --dev

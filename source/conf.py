@@ -58,7 +58,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'Devhay开发手册'
+project = u'Devhay使用说明'
 copyright = u'2017, Devhay'
 author = u'Devhay'
 
@@ -96,20 +96,53 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 # html_theme = 'alabaster'
-import sphinx_rtd_theme
-html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+#import sphinx_rtd_theme
+#html_theme = 'sphinx_rtd_theme'
+#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-html_theme_options = {
-    'collapse_navigation': False,
-    'display_version': False,
-    'navigation_depth': 3,
-}
+#html_theme_options = {
+#    'collapse_navigation': False,
+#    'display_version': False,
+#    'navigation_depth': 3,
+#}
+# Guzzle theme options (see theme.conf for more information)
 
+import guzzle_sphinx_theme
+html_theme = 'guzzle_sphinx_theme'
+html_theme_path = guzzle_sphinx_theme.html_theme_path()
+# Register the theme as an extension to generate a sitemap.xml
+extensions.append("guzzle_sphinx_theme")
+
+html_theme_options = {
+# Set the path to a special layout to include for the homepage
+#    "index_template": "special_index.html",
+
+# Set the name of the project to appear in the left sidebar.
+"project_nav_name": "Devhay v1.0",
+
+# Set your Disqus short name to enable comments
+#"disqus_comments_shortname": "Devhay",
+
+# Set you GA account ID to enable tracking
+#"google_analytics_account": "",
+
+# Path to a touch icon
+#"touch_icon": "",
+
+# Specify a base_url used to generate sitemap.xml links. If not
+# specified, then no sitemap will be built.
+#"base_url": ""
+
+# Allow a separate homepage from the master_doc
+#"homepage": "index",
+
+# Allow the project link to be overriden to a custom URL.
+"projectlink": "https://www.devhay.com",
+}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -190,9 +223,10 @@ texinfo_documents = [
 # app setup hook
 def setup(app):
     app.add_config_value('recommonmark_config', {
-        'enable_eval_rst': True,
-        'enable_auto_toc_tree': True,
+#        'enable_eval_rst': True,
+#        'enable_auto_toc_tree': True,
         'enable_auto_doc_ref': True,
+#        'auto_toc_tree_section': 'Contents'
     }, True)
     app.add_transform(AutoStructify)
 
