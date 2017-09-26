@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>用户指南 &mdash; Devhay开发手册 0.4.0 文档</title>
+  <title>安装 &mdash; Devhay开发手册 0.4.0 文档</title>
   
 
   
@@ -35,8 +35,9 @@
         <link rel="index" title="索引"
               href="genindex.html"/>
         <link rel="search" title="搜索" href="search.html"/>
-    <link rel="top" title="Devhay开发手册 0.4.0 文档" href="#"/>
-        <link rel="next" title="版权申明" href="overview.html"/> 
+    <link rel="top" title="Devhay开发手册 0.4.0 文档" href="index.html"/>
+        <link rel="next" title="快速入门" href="quickstart.html"/>
+        <link rel="prev" title="版权申明" href="overview.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -55,7 +56,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> Devhay开发手册
+            <a href="index.html" class="icon icon-home"> Devhay开发手册
           
 
           
@@ -82,12 +83,12 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">安装</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#">需求</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#">安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#">开发版</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#">需求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#">安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#">开发版</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
@@ -105,7 +106,7 @@
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Devhay开发手册</a>
+          <a href="index.html">Devhay开发手册</a>
         
       </nav>
 
@@ -133,15 +134,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>用户指南</li>
+      <li>安装</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/install.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -155,13 +156,43 @@
            <div itemprop="articleBody">
             
   <div class="section" id="">
-<span id="id1"></span><h1>用户指南<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<span id="id1"></span><h1>安装<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
+<div class="section" id="">
+<span id="id2"></span><h2>需求<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>PHP5.6 版本或以上</li>
+<li>目前仅支持连接mysql数据库。</li>
 </ul>
+</div>
+<div class="section" id="">
+<span id="id3"></span><h2>安装<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>推荐使用composer进行安装Devhay。composer是PHP的依赖管理工具，允许你在项目中声明依赖关系，并安装这些依赖。</p>
+<blockquote>
+<div>关于composer的安装，配置和使用方法见 http://docs.phpcomposer.com/</div></blockquote>
+<p>首先在composer.json文件中添加devhay的资源库地址</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;repositories&quot;</span><span class="o">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;vcs&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;git@code.aliyun.com:devhay/lib.git&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>然后作为依赖增加到你的项目中</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>composer require devhay/lib
+</pre></div>
+</div>
+<p>安装完毕之后，在你的项目中引入composer自动加载文件即可。例如：</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">require vendor/autoload.php</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id4"></span><h2>开发版<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>要使用开发版本，只需要添加版本号 <strong>&#64;dev</strong> 即可</p>
+<div class="highlight-powershell"><div class="highlight"><pre><span></span><span class="n">composer</span> <span class="n">require</span> <span class="n">devhay</span><span class="p">/</span><span class="n">lib</span> <span class="nv">@dev</span> <span class="p">-</span><span class="n">-dev</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -175,8 +206,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="overview.html" class="btn btn-neutral float-right" title="版权申明" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="快速入门" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="overview.html" class="btn btn-neutral" title="版权申明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
